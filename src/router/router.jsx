@@ -6,6 +6,7 @@ import FormNewProduct from '../components/FormNewProduct';
 import newProductAction from '../services/actions/newProductAction';
 import ProductDetails from '../components/ProductDetails';
 import productDetailsLoader from '../services/loaders/productDetailsLoader';
+import Products from '../pages/Products';
 
 export const router = createBrowserRouter([
   {
@@ -14,13 +15,17 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <Home />
+      },
+      {
+        path: '/products',
+        element: <Products />,
         loader: productsLoader,
         children: [
           { path: '/create-product', element: <FormNewProduct />, action: newProductAction },
           { path: '/:id', element: <ProductDetails />, loader: productDetailsLoader}
         ],
-      },
+      }
     ],
   },
 ]);
