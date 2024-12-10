@@ -22,8 +22,8 @@ export const router = createBrowserRouter([
         element: <Products />,
         loader: productsLoader,
         children: [
-          { path: '/create-product', element: <FormNewProduct />, action: newProductAction },
-          { path: '/:id', element: <ProductDetails />, loader: productDetailsLoader}
+          { path: '/products/create-product', element: <FormNewProduct />, action: newProductAction },
+          { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader}
         ],
       }
     ],
