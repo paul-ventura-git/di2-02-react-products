@@ -5,7 +5,6 @@ import classes from '../assets/css/ProductDetails.module.css'
 
 export default function ProductDetails() {
   const product = useLoaderData();
-  //console.log("*****************************************"+products)
   
   if (!product) {
     return (
@@ -25,9 +24,9 @@ export default function ProductDetails() {
   return (
     <Modal>
       <main className={classes.details}>      
-        <p className={classes.author}>{product.id}</p>
-        <p className={classes.text}>{product.title}</p>
-        <p className={classes.text}>{product.description}</p>
+        <p className={classes.author}>ID: {product.id}</p>
+        <p className={classes.text}>Title: {product.title}</p>
+        <p className={classes.text}>Description: {product.description}</p>
       </main>
     </Modal>
   );

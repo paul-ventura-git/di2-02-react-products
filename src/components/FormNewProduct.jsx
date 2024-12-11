@@ -19,7 +19,7 @@ export default function FormNewProduct() {
         </Form.Group>
         <div className={classes.actions}>
           <div className={classes.back}>
-            <Link to='..'>
+            <Link className="nav-link" to='..'>
               Cancel
             </Link>
           </div>
