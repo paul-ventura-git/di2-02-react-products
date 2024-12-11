@@ -37,6 +37,8 @@ export default function Products() {
           <tbody>
             {
               products.map((item)=>{
+                let editarProducto = 'editar/'+item.id;
+                let eliminarProducto = 'editar/'+item.id;
                 return (
                   <tr key={item.id}>
                     <td>{item.title}</td>
@@ -50,8 +52,8 @@ export default function Products() {
                     <td>{item.weight}</td>
                     <td>
                       <Link style={{marginRight: "10px", marginLeft: "10px"}} to={item.id}><FaEye /></Link>
-                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to=''><FaEdit /></Link>
-                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to=''><FaTrash /></Link>
+                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to={editarProducto}><FaEdit /></Link>
+                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to={eliminarProducto}><FaTrash /></Link>
                     </td>
                   </tr>
                 )
