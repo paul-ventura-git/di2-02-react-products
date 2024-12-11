@@ -5,7 +5,7 @@ import { productsLoader } from '../services/loaders/productsLoader';
 import FormNewProduct from '../components/FormNewProduct';
 import newProductAction from '../services/actions/newProductAction';
 import ProductDetails from '../components/ProductDetails';
-import productDetailsLoader from '../services/loaders/productDetailsLoader';
+import { productDetailsLoader } from '../services/loaders/productDetailsLoader';
 import Products from '../pages/Products';
 
 export const router = createBrowserRouter([

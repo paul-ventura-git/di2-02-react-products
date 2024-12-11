@@ -1,20 +1,22 @@
-import { Link, Form } from 'react-router-dom'
+import { Link, Form as MainForm } from 'react-router-dom'
+
+import Form from 'react-bootstrap/Form';
 
 import Modal from './Modal'
-import classes from '../assets/css/Modal.module.css'
+import classes from '../assets/css/NewProduct.module.css'
 
 export default function FormNewProduct() {
   return (
     <Modal>
-      <Form method="post" className={classes.form}>
-        <p>
-          <label htmlFor="body">Text:</label>
-          <textarea id="body" name="body" required rows={3}/>
-        </p>
-        <p>
-          <label htmlFor="name">Your name:</label>
-          <input type="text" id="name" name="author" required />
-        </p>
+      <MainForm method="post" className={classes.form}>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Nombre del Producto:</Form.Label>
+          <Form.Control name="title" placeholder="" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label>Descripción del producto:</Form.Label>
+          <Form.Control as="textarea" name="description" rows={3} />
+        </Form.Group>
         <div className={classes.actions}>
           <div className={classes.back}>
             <Link to='..'>
@@ -23,7 +25,7 @@ export default function FormNewProduct() {
           </div>
           <button>Submit</button>
         </div>
-      </Form>
+      </MainForm>
     </Modal>
   )
 }

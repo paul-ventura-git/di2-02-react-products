@@ -11,5 +11,6 @@ export default async function newProductaction({ request }) {
       'Content-Type': 'application/json',
     }
   });
-  return redirect('/');    
+  alert("Se insertaron los datos correctamente.");
+  return redirect('/products');    
 }
