@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 
+import '../assets/css/Products.module.css'
+
 export default function Products() {
   const products = useLoaderData();
   console.log(products);
@@ -47,9 +49,9 @@ export default function Products() {
                     <td>{item.brand}</td>
                     <td>{item.weight}</td>
                     <td>
-                      <div className="acciones-crud"><Link to={item.id}><FaEye /></Link></div>
-                      <div className="acciones-crud"><Link to=''><FaEdit /></Link></div>
-                      <div className="acciones-crud"><Link to=''><FaTrash /></Link></div>
+                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to={item.id}><FaEye /></Link>
+                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to=''><FaEdit /></Link>
+                      <Link style={{marginRight: "10px", marginLeft: "10px"}} to=''><FaTrash /></Link>
                     </td>
                   </tr>
                 )
