@@ -1,20 +1,25 @@
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
 
-import classes from '../assets/css/Modal.module.css'
+import Modal from 'react-bootstrap/Modal'
+import { useNavigate } from 'react-router-dom';
 
-export default function Modal({ children }) {
+export default function Modal2({ children }) {
+  const [show, setShow] = useState(true);
   const navigate = useNavigate();
 
-  function closeHandler(){
-    navigate('..');
+  const handleClose = () => {
+    setShow(false);
+    navigate('..')
   }
 
   return (
     <>
-      <div className={classes.backdrop} onClick={closeHandler} />
-      <dialog open className={classes.modal}>
-        {children}
-      </dialog>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{ children }</Modal.Body>
+      </Modal>
     </>
   )
 }
