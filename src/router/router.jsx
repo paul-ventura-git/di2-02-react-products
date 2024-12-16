@@ -7,6 +7,7 @@ import newProductAction from '../services/actions/newProductAction';
 import ProductDetails from '../components/ProductDetails';
 import { productDetailsLoader } from '../services/loaders/productDetailsLoader';
 import Products from '../pages/Products';
+import Modal2 from '../components/Modal2';
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
         element: <Products />,
         loader: productsLoader,
         children: [
-          { path: '/products/create-product', element: <></>, action: newProductAction },
+          { path: '/products/create-product', element: <Modal2 />, action: newProductAction },
           { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader}
         ],
       }

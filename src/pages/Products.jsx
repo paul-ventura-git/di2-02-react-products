@@ -1,4 +1,4 @@
-import { Outlet, Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Outlet, Link, useLoaderData } from "react-router-dom";
 
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -10,12 +10,8 @@ import '../assets/css/Products.module.css'
 
 export default function Products() {
   const products = useLoaderData();
-  const navigate = useNavigate();
-  console.log(products);
 
-  function closeHandler() {
-    navigate('/products');
-  }
+  console.log(products);
 
   return (
     <div>
@@ -25,27 +21,10 @@ export default function Products() {
         <br></br>
         <h1>Productos</h1>
         <br></br>
-        <Button variant="warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <Link className="nav-link" to="/products/create-product"><AiOutlineFileAdd /> Nuevo Producto</Link>
-        </Button>
-
-        <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true" onClick={closeHandler}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div className="modal-body">
-                ...
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        
+        <Link className="nav-link" to="/products/create-product">
+          <Button variant="warning"><AiOutlineFileAdd />Nuevo Producto</Button>
+        </Link>        
 
         <br></br>
         <br></br>
@@ -91,6 +70,7 @@ export default function Products() {
             }
 
           </tbody>
+
         </Table>
       </div>
     </div>

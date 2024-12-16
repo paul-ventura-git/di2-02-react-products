@@ -1,34 +1,34 @@
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
 
-import classes from '../assets/css/Modal.module.css'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import { useNavigate } from 'react-router-dom';
 
 export default function Modal2({ children }) {
+  const [show, setShow] = useState(true);
   const navigate = useNavigate();
 
-  function closeHandler(){
-    navigate('..');
+  const handleClose = () => {
+    setShow(false);
+    navigate('..')
   }
-
+  //const handleShow = () => setShow(true);
   return (
     <>
-      <div className={classes.backdrop} onClick={closeHandler} />
-      <dialog open className={classes.modal} >
-        
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div className="modal-body">
-            {children}
-          </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" className="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-
-      </dialog>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!{ children }</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   )
 }
