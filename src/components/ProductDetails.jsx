@@ -10,8 +10,8 @@ export default function ProductDetails() {
     return (
       <Modal>
         <main className={classes.details}>
-          <h1>Could not find post</h1>
-          <p>Unfortunately, the requested post could not be found.</p>
+          <h1>No se pudo encontrar el producto</h1>
+          <p>Desafortunadamente, el producto requerido no fue encontrado.</p>
           <p>
             <Link to=".." className={classes.btn}>
               Okay

@@ -1,12 +1,12 @@
 import { Link, Form as MainForm } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form';
-import Modal2 from './Modal'
+import Modal from './Modal'
 
 export default function FormNewProduct() {
 
   return (
-    <Modal2>
+    <Modal>
       <MainForm method="post">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Nombre del Producto:</Form.Label>
@@ -55,6 +55,6 @@ export default function FormNewProduct() {
         </div>
         <br />
       </MainForm>
-    </Modal2>
+    </Modal>
   )
 }
