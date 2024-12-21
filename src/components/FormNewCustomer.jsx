@@ -1,59 +1,40 @@
 import { Link, Form as MainForm } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form';
-import Modal from './Modal'
+import MyModal from './MyModal'
 
 export default function FormNewCustomer() {
   return (
-    <Modal>
+    <MyModal myTitle="Nuevo Cliente">
       <MainForm method="post">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Nombre del Producto:</Form.Label>
-          <Form.Control name="title" placeholder="" />
+          <Form.Label>Nombre:</Form.Label>
+          <Form.Control name="name" placeholder="" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Descripción del producto:</Form.Label>
-          <Form.Control as="textarea" name="description" rows={3} />
+          <Form.Label>Teléfono:</Form.Label>
+          <Form.Control name="phone" placeholder="" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Categoría:</Form.Label>
-          <Form.Control name="category" placeholder="" />
+          <Form.Label>Email:</Form.Label>
+          <Form.Control name="email" placeholder="" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Precio:</Form.Label>
-          <Form.Control name="price" placeholder="" />
+          <Form.Label>Dirección:</Form.Label>
+          <Form.Control name="address" placeholder="" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Descuento:</Form.Label>
-          <Form.Control name="discount" placeholder="" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Rating:</Form.Label>
-          <Form.Control name="rating" placeholder="" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Stock:</Form.Label>
-          <Form.Control name="stock" placeholder="" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Marca:</Form.Label>
-          <Form.Control name="brand" placeholder="" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Peso:</Form.Label>
-          <Form.Control name="weight" placeholder="" />
-        </Form.Group>
+        
         <br />
         <div style={{  display: "flex", justifyContent: "flex-end",  gap: "1rem"}}>
           <button className="btn btn-light">
             <Link className="nav-link" to='..'>
-              Cancel
+              Cancelar
             </Link>
           </button>
-          <button className="btn btn-primary">Submit</button>
+          <button className="btn btn-primary">Enviar</button>
         </div>
         <br />
       </MainForm>
-    </Modal>
+    </MyModal>
   )
 }

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { useNavigate } from 'react-router-dom';
 
-export default function Modal2({ children }) {
+export default function MyModal({ children, ...props }) {
   const [show, setShow] = useState(true);
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ export default function Modal2({ children }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>{props.myTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{ children }</Modal.Body>
       </Modal>

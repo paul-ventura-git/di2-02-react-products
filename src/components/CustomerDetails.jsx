@@ -1,6 +1,6 @@
 import { useLoaderData, Link } from 'react-router-dom';
 
-import Modal from '../components/Modal'
+import Modal from './MyModal'
 import classes from '../assets/css/ProductDetails.module.css'
 
 export default function CustomerDetails() {

@@ -1,12 +1,12 @@
 import { Link, Form as MainForm } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form';
-import Modal from './Modal'
+import MyModal from './MyModal'
 
 export default function FormNewProduct() {
 
   return (
-    <Modal>
+    <MyModal myTitle="Nuevo Producto">
       <MainForm method="post">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Nombre del Producto:</Form.Label>
@@ -48,13 +48,13 @@ export default function FormNewProduct() {
         <div style={{  display: "flex", justifyContent: "flex-end",  gap: "1rem"}}>
           <button className="btn btn-light">
             <Link className="nav-link" to='..'>
-              Cancel
+              Cancelar
             </Link>
           </button>
-          <button className="btn btn-primary">Submit</button>
+          <button className="btn btn-primary">Enviar</button>
         </div>
         <br />
       </MainForm>
-    </Modal>
+    </MyModal>
   )
 }
