@@ -47,7 +47,7 @@ export default function Products() {
             {
               products.map((item)=>{
                 let editarProducto = 'editar/'+item.id;
-                let eliminarProducto = 'editar/'+item.id;
+                let eliminarProducto = 'eliminar/'+item.id;
                 return (
                   <tr key={item.id}>
                     <td>{item.title}</td>
