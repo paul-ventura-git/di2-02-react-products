@@ -10,16 +10,13 @@ import '../assets/css/Products.module.css'
 
 export default function Products() {
   const products = useLoaderData();
-
-  console.log(products);
-
   return (
     <div className="my-container">
       <Outlet></Outlet>
       <div className="container">
         <br></br>
         <br></br>
-        <h1>Productos</h1>
+        <h1>Nuevo Producto</h1>
         <br></br>
         
         <Link className="nav-link" to="/products/create-product">
@@ -28,8 +25,8 @@ export default function Products() {
 
         <br></br>
         <br></br>
-        <Table responsive>
-          <thead>
+        <Table responsive className="table-hover table-striped table-responsive">
+          <thead className="table-dark">
             <tr>
               <th>Nombre</th>              
               <th>Descripción</th>
