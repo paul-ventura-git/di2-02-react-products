@@ -7,9 +7,16 @@ import newProductAction from '../services/actions/newProductAction';
 import ProductDetails from '../components/ProductDetails';
 import { productDetailsLoader } from '../services/loaders/productDetailsLoader';
 import Products from '../pages/Products';
+import Dashboard from '../pages/Dashboard';
 import Customers from '../pages/Customers';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound'
+import FormNewCustomer from '../components/FormNewCustomer';
+import CustomerDetails from '../components/CustomerDetails';
+
+import { customersLoader } from '../services/loaders/customersLoader';
+import newCustomerAction from '../services/actions/newCustomerAction';
+import { customerDetailsLoader } from '../services/loaders/customerDetailsLoader';
 
 export const router = createBrowserRouter([
   {
@@ -31,13 +38,22 @@ export const router = createBrowserRouter([
       },
       {
         path: '/customers',
-        element: <Customers />
+        element: <Customers />,
+        loader: customersLoader,
+        children: [
+          { path: '/customers/create-customer', element: <FormNewCustomer />, action: newCustomerAction },
+          { path: '/customers/:id', element: <CustomerDetails />, loader: customerDetailsLoader}
+        ],
       },
     ],
   },
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />
   },
   {
     path: '/*',

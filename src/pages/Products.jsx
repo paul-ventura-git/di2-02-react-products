@@ -14,7 +14,7 @@ export default function Products() {
   console.log(products);
 
   return (
-    <div>
+    <div className="my-container">
       <Outlet></Outlet>
       <div className="container">
         <br></br>

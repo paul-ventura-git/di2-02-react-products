@@ -1,5 +1,7 @@
 export default function NotFound() {
   return (
-    <div>NotFound</div>
+    <div className="my-container">
+      NotFound
+    </div>
   )
 }
