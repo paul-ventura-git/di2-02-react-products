@@ -1,6 +1,6 @@
 import { useLoaderData, Link } from 'react-router-dom';
 
-import Modal from './MyModal'
+import MyModal from './MyModal'
 import classes from '../assets/css/ProductDetails.module.css'
 
 export default function CustomerDetails() {
@@ -8,7 +8,7 @@ export default function CustomerDetails() {
   
   if (!customer) {
     return (
-      <Modal>
+      <MyModal>
         <main className={classes.details}>
           <h1>No se pudo encontrar el cliente</h1>
           <p>Desafortunadamente, el cliente requerido no fue encontrado.</p>
@@ -18,16 +18,16 @@ export default function CustomerDetails() {
             </Link>
           </p>
         </main>
-      </Modal>
+      </MyModal>
     );
   }
   return (
-    <Modal>
+    <MyModal myTitle="Detalles del Cliente">
       <main className={classes.details}>      
-        <p className={classes.author}>ID: {customer.id}</p>
+        <p className={classes.text}>ID: {customer.id}</p>
         <p className={classes.text}>Nombre: {customer.name}</p>
         <p className={classes.text}>Email: {customer.email}</p>
       </main>
-    </Modal>
+    </MyModal>
   );  
 }
