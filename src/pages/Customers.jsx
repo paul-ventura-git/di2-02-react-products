@@ -38,7 +38,7 @@ export default function Customers() {
           <tbody>
             {
               customers.map((item)=>{
-                let editarCliente = 'editar/'+item.id;
+                let editarCliente = 'edit-customer/'+item.id;
                 let eliminarCliente = 'eliminar/'+item.id;
                 return (
                   <tr key={item.id}>

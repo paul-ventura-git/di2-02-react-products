@@ -14,19 +14,19 @@ export default function FormEditCustomer() {
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Nombre:</Form.Label>
-        <Form.Control name={customer.name} defaultValue={customer.id} />
+        <Form.Control name={customer.name} defaultValue={customer.name} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Teléfono:</Form.Label>
-        <Form.Control name={customer.phone} defaultValue={customer.id} />
+        <Form.Control name={customer.phone} defaultValue={customer.phone} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Email:</Form.Label>
-        <Form.Control name={customer.email} defaultValue={customer.id} />
+        <Form.Control name={customer.email} defaultValue={customer.email} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Dirección:</Form.Label>
-        <Form.Control name={customer.address} defaultValue={customer.id} />
+        <Form.Control name={customer.address} defaultValue={customer.address} />
       </Form.Group>
       
       <br />
