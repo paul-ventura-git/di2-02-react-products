@@ -18,8 +18,11 @@ import { customersLoader } from '../services/loaders/customersLoader';
 import newCustomerAction from '../services/actions/newCustomerAction';
 import { customerDetailsLoader } from '../services/loaders/customerDetailsLoader';
 import FormEditCustomer from '../components/FormEditCustomer';
+import DeleteCustomer from '../components/DeleteCustomer';
 import { customerEditLoader } from '../services/loaders/customerEditLoader';
 import editCustomerAction from '../services/actions/editCustomerAction';
+import deleteCustomerAction from '../services/actions/deleteCustomerAction';
+import { deleteCustomerLoader } from '../services/loaders/deleteCustomerLoader';
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +49,8 @@ export const router = createBrowserRouter([
         children: [
           { path: '/customers/create-customer', element: <FormNewCustomer />, action: newCustomerAction },
           { path: '/customers/:id', element: <CustomerDetails />, loader: customerDetailsLoader},
-          { path: '/customers/edit-customer/:id', element: <FormEditCustomer />, loader: customerEditLoader, action: editCustomerAction}
+          { path: '/customers/edit-customer/:id', element: <FormEditCustomer />, loader: customerEditLoader, action: editCustomerAction},
+          { path: '/customers/delete-customer/:id', element: <DeleteCustomer />, loader: deleteCustomerLoader, action: deleteCustomerAction },
         ],
       },
     ],

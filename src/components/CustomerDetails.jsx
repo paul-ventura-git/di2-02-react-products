@@ -27,6 +27,7 @@ export default function CustomerDetails() {
         <p className={classes.text}>ID: {customer.id}</p>
         <p className={classes.text}>Nombre: {customer.name}</p>
         <p className={classes.text}>Email: {customer.email}</p>
+        <p className={classes.text}>Dirección: {customer.address}</p>
       </main>
     </MyModal>
   );  
