@@ -1,10 +1,9 @@
-//import { redirect } from 'react-router-dom'
+import { redirect } from 'react-router-dom'
 
 export default async function editCustomerAction({ request }) {
   const formData = await request.formData();
   const customerData = Object.fromEntries(formData.entries()); // { body: "...", author: "..."} 
-  console.log(customerData);
-/*
+
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   
@@ -29,5 +28,5 @@ export default async function editCustomerAction({ request }) {
 
   alert("Se insertaron los datos correctamente.");
   return redirect('/customers');    
-  */
+  
 }
