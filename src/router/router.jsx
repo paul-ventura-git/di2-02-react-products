@@ -24,6 +24,12 @@ import editCustomerAction from '../services/actions/editCustomerAction';
 import deleteCustomerAction from '../services/actions/deleteCustomerAction';
 import { deleteCustomerLoader } from '../services/loaders/deleteCustomerLoader';
 
+import FormEditProduct from '../components/FormEditProduct';
+import editProductAction from '../services/actions/editProductAction';
+import DeleteProduct from '../components/DeleteProduct';
+import { deleteProductLoader } from '../services/loaders/deleteProductLoader';
+import deleteProductAction from '../services/actions/deleteProductAction';
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -39,7 +45,9 @@ export const router = createBrowserRouter([
         loader: productsLoader,
         children: [
           { path: '/products/create-product', element: <FormNewProduct />, action: newProductAction },
-          { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader}
+          { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader},
+          { path: '/products/edit-product/:id', element: <FormEditProduct />, action: editProductAction },
+          { path: '/products/delete-product/:id', element: <DeleteProduct />, loader: deleteProductLoader, action: deleteProductAction },
         ],
       },
       {
