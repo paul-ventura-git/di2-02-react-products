@@ -2,12 +2,13 @@ import { Link, Form as MainForm, useLoaderData } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form';
 import MyModal from './MyModal'
+import classes from '../assets/css/ProductDetails.module.css'
 
 export default function FormEditCustomer() {
   const customer = useLoaderData();
   return (
     <MyModal myTitle="Editar Cliente">
-    <MainForm method="put">
+    <MainForm method="put" className={classes.details}>
     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>ID:</Form.Label>
         <Form.Control name="id" defaultValue={customer.id} />

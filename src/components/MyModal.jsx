@@ -16,7 +16,7 @@ export default function MyModal({ children, ...props }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton >
-          <Modal.Title style={{paddingLeft: "1rem"}}>{props.myTitle}</Modal.Title>
+          <Modal.Title style={{paddingLeft: "1rem", paddingRight: "1rem"}}>{props.myTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{ children }</Modal.Body>
       </Modal>
