@@ -25,6 +25,7 @@ import deleteCustomerAction from '../services/actions/deleteCustomerAction';
 import { deleteCustomerLoader } from '../services/loaders/deleteCustomerLoader';
 
 import FormEditProduct from '../components/FormEditProduct';
+import { productEditLoader } from '../services/loaders/productEditLoader';
 import editProductAction from '../services/actions/editProductAction';
 import DeleteProduct from '../components/DeleteProduct';
 import { deleteProductLoader } from '../services/loaders/deleteProductLoader';
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
         children: [
           { path: '/products/create-product', element: <FormNewProduct />, action: newProductAction },
           { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader},
-          { path: '/products/edit-product/:id', element: <FormEditProduct />, action: editProductAction },
+          { path: '/products/edit-product/:id', element: <FormEditProduct />, loader: productEditLoader, action: editProductAction },
           { path: '/products/delete-product/:id', element: <DeleteProduct />, loader: deleteProductLoader, action: deleteProductAction },
         ],
       },

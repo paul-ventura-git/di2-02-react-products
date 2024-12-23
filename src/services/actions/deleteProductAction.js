@@ -14,7 +14,7 @@ export default async function deleteProductAction({ request }) {
     redirect: "follow"
   };
   
-  fetch("http://localhost:8080/customers/" + productData.id, requestOptions)
+  fetch("http://localhost:8080/products/" + productData.id, requestOptions)
     .then((response) => response.text())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
